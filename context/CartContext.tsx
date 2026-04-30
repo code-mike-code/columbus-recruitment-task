@@ -1,5 +1,6 @@
 //  global state of cart
 import { createContext, useContext, useState } from 'react'
+import type { ReactNode } from 'react'
 
 type CartContextType = {
     itemsCount: number;
@@ -11,7 +12,7 @@ const CartContext = createContext<CartContextType>({
     addItem: () => {},
 })
 
-export function CartProvider({ children }: { children: React.ReactNode }) {
+export function CartProvider({ children }: { children: ReactNode }) {
     const [itemsCount, setItemsCount] = useState(0)
 
     const addItem = () => {
