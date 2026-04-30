@@ -1,10 +1,14 @@
+'use client'
+
 import type { Product } from '@/types'
+import { useCart } from '@/context/CartContext'
 
 type ProductCardProps = {
     product: Product;
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+    const { addItem } = useCart()
     const discountedPrice = product.promotion 
                 ? product.price - (product.price * product.promotion.percentage / 100)
                 : null
@@ -25,8 +29,8 @@ export function ProductCard({ product }: ProductCardProps) {
                 </div>
             )}
             <p>{discountedPrice ?? product.price} zł</p>
-            
-            <button>Dodaj do koszyka</button>
+
+            <button onClick={addItem}>Dodaj do koszyka</button>
         </article>
     )
 }
