@@ -1,0 +1,24 @@
+:root {
+  /* Brand colors */
+  --color-primary: #F5DF4D;        /* Illuminating */
+  --color-primary-dark: #D4BE2A;   /* Old gold — hover */
+  --color-secondary: #97999B;      /* Ultimate Grey */
+
+  /* Background */
+  --color-bg: #F2F5F7;             /* Platinum */
+  --color-surface: #FFFFFF;        /* White */
+  --color-surface-hover: #F8FAFC;  /* Bright snow - hover */
+
+  /* Text */
+  --color-text: #020612;           /* Ink black */
+  --color-text-muted: #5A5C5E;     /* Charcoal */
+  --color-text-light: #97999B;     /* Cool steel */
+
+  /* Border & shadow */
+  --color-border: #E2E6EA;         /* Platinum dark */
+  --color-shadow: rgba(2, 6, 18, 0.08);  /* Card shadow */
+
+  /* State */
+  --color-success: #2ECC71;        /* Emerald */
+  --color-error: #E74C3C;          /* Cinnabar — error */
+}
