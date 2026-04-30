@@ -1,5 +1,4 @@
 //  data fetch logic
-
 import { ApiResponse } from '@/types'
 
 const API_URL = process.env.API_URL
