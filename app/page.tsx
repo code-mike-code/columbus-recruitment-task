@@ -1,1 +1,3 @@
-// main page with products list
+export default function Home() {
+  return <main>Hello</main>
+}
