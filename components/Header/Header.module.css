@@ -27,7 +27,7 @@
 .logo {
     height: 40px;
     object-fit: contain;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-sm);
 }
 
 .brandName {

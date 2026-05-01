@@ -42,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
             alt={product.brandName}
             className={styles.brandLogo}
           />
-          {/* <span className={styles.brandName}>{product.brandName}</span> */}
+          <span className={styles.brandName}>{product.brandName}</span>
         </div>
 
         <h2 className={styles.title}>{product.title}</h2>
