@@ -1,18 +1,24 @@
-import type { Product } from '@/types'
+import styles from './ProductList.module.css'
 import { ProductCard } from '@/components/ProductCard/ProductCard'
+import type { Product } from '@/types'
 
 type ProductListProps = {
-    products: Product[];
+  products: Product[]
 }
 
 export function ProductList({ products }: ProductListProps) {
-    return (
-        <ul>
-            {products.map(product => (
-                <li key={product.articleNumber}>
-                    <ProductCard product={product} />
-                </li>
-            ))}
-        </ul>
-    )
+  return (
+    <section className={styles.section}>
+      <div className={styles.heading}>
+        <p className={styles.eyebrow}>Product listing</p>
+        <h1 className={styles.title}>Discover our products</h1>
+      </div>
+
+      <div className={styles.grid}>
+        {products.map((product) => (
+          <ProductCard key={product.ean} product={product} />
+        ))}
+      </div>
+    </section>
+  )
 }

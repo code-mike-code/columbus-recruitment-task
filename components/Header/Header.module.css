@@ -1,0 +1,89 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--space-4) 0;
+}
+
+.inner {
+    width: min(100% - 2rem, 1280px);
+    min-height: var(--header-height);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3)
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.brandName {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: 0.02rem;
+}
+
+.cartButton {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), 
+        background-color var(--transition-base), 
+        border-color var(--transition-base);
+    cursor: pointer;
+}
+
+.cartButton:hover {
+    background-color: var(--color-surface-hover);
+    transform: translateY(-1px);
+}
+
+.cartIcon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-text);
+}
+
+.cartIcon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 0 0 3px var(--color-surface);
+}
+
