@@ -16,7 +16,7 @@ export function ProductList({ products }: ProductListProps) {
 
       <div className={styles.grid}>
         {products.map((product) => (
-          <ProductCard key={product.ean} product={product} />
+          <ProductCard key={product.gtin} product={product} />
         ))}
       </div>
     </section>

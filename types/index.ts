@@ -12,8 +12,8 @@ export type Promotion = {
 
 export type Product = {
     articleNumber: string;
-    ean: string;
-    link: string;
+    gtin: string;
+    url: string;
     image: Image;
     title: string;
     description: string;

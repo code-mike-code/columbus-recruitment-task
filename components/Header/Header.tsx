@@ -1,20 +1,27 @@
 'use client'
 
 import { useCart } from '@/context/CartContext'
+import type { Image } from '@/types'
 import styles from './Header.module.css'
 
-export function Header () {
+type HeaderProps = {
+  logo: Image
+  title: string
+}
+
+export function Header ({ logo, title}: HeaderProps) {
     const { itemsCount } = useCart()
+
     return (
         <header className={styles.header}>
             <div className={styles.inner}>
                 <a href="/" className={styles.brand}>
                     <img 
-                    src="/logo.png" 
-                    alt="Columbus Poland Logo"
+                    src={logo.url}
+                    alt={logo.altText}
                     className={styles.logo} 
                     />
-                    <span className={styles.brandName}>Columbus Poland</span>
+                    <span className={styles.brandName}>{title}</span>
                 </a>
 
                 <button
