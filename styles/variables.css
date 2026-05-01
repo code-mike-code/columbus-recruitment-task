@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Flosom';
-  src: url('/fonts/flosom-black-web.woff2') format('woff2'),
-       url('/fonts/flosom-black-web.woff') format('woff');
+  font-family: 'Folsom';
+  src: url('/fonts/folsom-black-web.woff2') format('woff2'),
+       url('/fonts/folsom-black-web.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -45,9 +45,9 @@
 
 :root {
 
-  --font-display: 'Flosom', Georgia, serif;
+  --font-display: 'Folsom', Georgia, serif;
   --font-body: 'Katwijk Mono', monospace;
-  
+
   /* Brand colors */
   --color-primary: #F5DF4D;        /* Illuminating */
   --color-primary-dark: #D4BE2A;   /* Old gold — hover */
@@ -87,4 +87,11 @@
   --radius-md: 0.5rem;    /*  8px */
   --radius-lg: 0.75rem;   /* 12px */
   --radius-xl: 1rem;      /* 16px */
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px var(--color-shadow);
+  --shadow-md: 0 10px 30px rgba(2, 6, 18, 0.12);
+
+  --transition-base: 0.2s ease;
+  --header-height: 80px;
   }
