@@ -109,19 +109,35 @@
 }
 
 .button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: 100%;
   padding: 0.9rem 1rem;
-  border: 1px solid transparent;
   border-radius: var(--radius-lg);
   background-color: var(--color-primary);
   color: var(--color-text);
   font-size: var(--text-sm);
   font-weight: 700;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: color 0.25s ease, transform 0.2s ease;
 }
 
-.button:hover {
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background-color: var(--color-secondary);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+  color: var(--color-primary);
+}
+
+.button:hover{
   color: var(--color-primary);
 }
 
