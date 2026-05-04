@@ -1,8 +1,9 @@
 'use client'
 
-import styles from './ProductCard.module.css'
+import { useEffect, useRef, useState } from 'react'
 import type { Product } from '@/types'
 import { useCart } from '@/context/CartContext'
+import styles from './ProductCard.module.css'
 
 type ProductCardProps = {
   product: Product
@@ -10,6 +11,32 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart()
+  const cardRef = useRef<HTMLElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const element = cardRef.current
+
+    if (!element) return 
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true)
+                observer.unobserve(element)
+            }
+        },
+        {
+            threshold: 0.15,
+        }
+    )
+
+    observer.observe(element)
+
+    return () => {
+        observer.disconnect()
+    }
+})
 
   const discountedPrice = product.promotion
     ? product.price - (product.price * product.promotion.percentage) / 100
@@ -20,7 +47,10 @@ export function ProductCard({ product }: ProductCardProps) {
     }
 
   return (
-    <article className={styles.card}>
+    <article 
+        ref={cardRef}
+        className={`${styles.card} reveal ${isVisible ? 'revealVisible' : ''}`}
+    >
       <div className={styles.imageWrap}>
         <img
           src={product.image.url}
