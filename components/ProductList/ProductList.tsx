@@ -1,6 +1,6 @@
-import styles from './ProductList.module.css'
 import { ProductCard } from '@/components/ProductCard/ProductCard'
 import type { Product } from '@/types'
+import styles from './ProductList.module.css'
 
 type ProductListProps = {
   products: Product[]
