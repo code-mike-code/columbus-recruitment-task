@@ -5,7 +5,7 @@ A frontend application built as part of the Columbus Poland recruitment task.
 
 ## Preview
 
-![App preview on multiple screen sizes](public/assets/img/rwd-mockup.png)
+![App preview on multiple screen sizes](public/img/rwd-mockup.png)
 
 ## Overview
 
