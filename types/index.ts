@@ -1,7 +1,7 @@
 //  TS types from JSON schema
 
 export type Image = {
-    link: string;
+    url: string;
     altText: string;
 }
 

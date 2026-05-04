@@ -1,20 +1,10 @@
-.reveal {
+/* @keyframes cardFadeUp {
+  from {
     opacity: 0;
-    transform: translateY(52px);
-    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-    will-change: opacity, transform;
-}
-
-.revealVisible {
+    transform: translateY(24px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .revealVisible {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
+  }
+} */

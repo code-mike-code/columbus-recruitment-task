@@ -11,32 +11,24 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart()
-  const cardRef = useRef<HTMLElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLElement>(null)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const element = cardRef.current
-
-    if (!element) return 
-
+    const el = ref.current
+    if (!el) return
     const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                setIsVisible(true)
-                observer.unobserve(element)
-            }
-        },
-        {
-            threshold: 0.15,
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
         }
+      },
+      { threshold: 0.1 }
     )
-
-    observer.observe(element)
-
-    return () => {
-        observer.disconnect()
-    }
-})
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const discountedPrice = product.promotion
     ? product.price - (product.price * product.promotion.percentage) / 100
@@ -48,8 +40,8 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article 
-        ref={cardRef}
-        className={`${styles.card} reveal ${isVisible ? 'revealVisible' : ''}`}
+     ref={ref}
+     className={`${styles.card} ${visible ? styles.cardVisible : ''}`}
     >
       <div className={styles.imageWrap}>
         <img
